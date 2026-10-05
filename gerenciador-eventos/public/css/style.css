@@ -1,0 +1,231 @@
+:root {
+  --cinza-claro: #d9d9d9;
+  --cinza-medio: #8a8a8a;
+  --cinza-escuro: #5f5f5f;
+  --borda: #555555;
+  --texto: #000000;
+  --fundo: #ffffff;
+  --erro: #b3261e;
+  --foco: #1a5fb4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--texto);
+  background: var(--fundo);
+  line-height: 1.4;
+}
+
+/* ---------- Menu principal ---------- */
+.topo {
+  background: var(--cinza-claro);
+  min-height: 105px;
+  padding: 24px 42px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.logo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 48px;
+}
+
+.menu a {
+  color: var(--texto);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.menu a:hover {
+  border-bottom-color: var(--cinza-escuro);
+}
+
+.menu a.ativo {
+  border-bottom-color: var(--texto);
+}
+
+/* ---------- Conteúdo ---------- */
+.conteudo {
+  padding: 48px 42px;
+}
+
+.conteudo h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.aviso {
+  color: var(--cinza-escuro);
+  margin-bottom: 16px;
+}
+
+/* ---------- Cards de eventos ---------- */
+.grade-eventos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 348px));
+  gap: 32px 24px;
+}
+
+.card-evento {
+  background: var(--cinza-claro);
+  padding: 18px 14px 20px;
+}
+
+.card-evento p {
+  font-size: 0.875rem;
+  margin-bottom: 10px;
+  overflow-wrap: anywhere;
+}
+
+.card-evento p strong {
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.acoes {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.btn {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-acao {
+  background: var(--cinza-medio);
+  color: #ffffff;
+  font-size: 0.875rem;
+  width: 114px;
+  height: 31px;
+}
+
+.btn-acao:hover {
+  background: var(--cinza-escuro);
+}
+
+/* ---------- Formulários ---------- */
+.formulario {
+  max-width: 292px;
+}
+
+.campo {
+  margin-bottom: 26px;
+}
+
+.campo label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.campo input,
+.campo select {
+  width: 100%;
+  height: 37px;
+  padding: 0 10px;
+  font: inherit;
+  font-size: 0.85rem;
+  border: 1px solid var(--borda);
+  border-radius: 0;
+  background: var(--fundo);
+  color: var(--texto);
+}
+
+.campo select {
+  appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--texto) 50%),
+                    linear-gradient(135deg, var(--texto) 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%;
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 32px;
+}
+
+.campo .invalido {
+  border-color: var(--erro);
+  border-width: 2px;
+}
+
+.msg-erro {
+  display: block;
+  min-height: 1em;
+  margin-top: 6px;
+  font-size: 0.75rem;
+  color: var(--erro);
+}
+
+.btn-primario {
+  background: var(--cinza-claro);
+  color: var(--texto);
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: 164px;
+  height: 48px;
+  margin-top: 8px;
+}
+
+.btn-primario:hover {
+  background: #c8c8c8;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* ---------- Acessibilidade ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--foco);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .topo,
+  .conteudo {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .menu {
+    gap: 8px 24px;
+  }
+
+  .grade-eventos {
+    grid-template-columns: 1fr;
+  }
+
+  .formulario {
+    max-width: 100%;
+  }
+}

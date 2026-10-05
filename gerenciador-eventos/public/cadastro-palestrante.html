@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cadastro de palestrantes | Gerenciador de eventos</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topo">
+    <h1 class="logo"><a href="index.html">Gerenciador de eventos</a></h1>
+    <nav class="menu" aria-label="Menu principal">
+      <a href="cadastro-palestrante.html" class="ativo" aria-current="page">Cadastro de palestrantes</a>
+      <a href="cadastro-evento.html">Cadastro de evento</a>
+      <a href="index.html">Gerenciador de evento</a>
+    </nav>
+  </header>
+
+  <main class="conteudo">
+    <h2>Cadastro palestrante</h2>
+
+    <form id="form-palestrante" class="formulario" novalidate>
+      <div class="campo">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" maxlength="100" required>
+        <span class="msg-erro" id="erro-nome"></span>
+      </div>
+
+      <div class="campo">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" maxlength="150" required>
+        <span class="msg-erro" id="erro-email"></span>
+      </div>
+
+      <button type="submit" class="btn btn-primario">Cadastrar</button>
+    </form>
+  </main>
+
+  <script src="js/comum.js"></script>
+  <script src="js/palestrante.js"></script>
+</body>
+</html>
